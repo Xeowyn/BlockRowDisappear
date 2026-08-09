@@ -11,7 +11,7 @@ This game only runs on Windows.
 **To run it from the code (the .exe isn't included in this repo):**
 
 1. Install the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) if you don't have it
-2. Open a terminal in the `source` folder
+2. Open a terminal in the `source/BlockRowDisappear` folder
 3. Run:
 
 ```

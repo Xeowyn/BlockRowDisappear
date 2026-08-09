@@ -1,0 +1,36 @@
+Where the artwork came from
+===========================
+
+Everything the game uses is made by tools\make_assets.py:
+
+  block_1..7.png   the seven playing pieces, drawn as shiny blocks
+  empty.png        an empty square on the board
+  ghost.png        the outline showing where a piece will land
+  background.png   the sunset, the sun and the grid floor
+  boom_1..8.png    the explosion
+  *.wav            every sound effect
+
+None of it is copied from anywhere, so you can do whatever you
+like with it.
+
+
+arcadArne_sheet.png
+-------------------
+This is NOT used by the game any more, but it is kept here in case
+you want it.
+
+  "Arcade Pack", posted on OpenGameArt.org
+  https://opengameart.org/content/arcade-pack
+  Licence: CC0 1.0 Universal (public domain)
+  16x16 arcade pieces drawn with Arne's 16 colour palette.
+
+CC0 means it is free for anything, including commercial use, and no
+credit is required. It is credited here anyway.
+
+The blocks used to be built from one tile off this sheet, recoloured
+seven times. That sheet's palette is only greens, blues and browns,
+so the recoloured blocks came out muddy. The blocks are now drawn
+from scratch instead, which is why they are brighter.
+
+If you want the old look back, make_assets.py still has the recolour()
+function and the BASE_X / BASE_Y coordinates of the tile it used.

@@ -15,6 +15,9 @@ class Assets
 
     public string Folder;
 
+    // how many parent folders to try when looking for the assets folder
+    private const int MaxParentFolderSearchDepth = 5;
+
     // normal way: look for the assets folder next to the .exe
     public Assets() : this(FindFolder())
     {
@@ -68,7 +71,7 @@ class Assets
         // when running from Visual Studio the exe is buried in bin\Debug,
         // so look back up the folders too
         string up = here;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < MaxParentFolderSearchDepth; i++)
         {
             up = Path.Combine(up, "..");
             string tryHere = Path.GetFullPath(Path.Combine(up, "assets"));

@@ -71,7 +71,7 @@ class Renderer
 
         if (game.Exploding == false && game.State != Mode.Dead && game.State != Mode.Title)
         {
-            DrawPiece(g, game.Current, game.Current.Row, boardX, boardY, Tile, 1.0f);
+            DrawPiece(g, game.Current, game.Current.Row, boardX, boardY, Tile);
         }
 
         DrawSparks(g, game, boardX, boardY);
@@ -162,7 +162,7 @@ class Renderer
         }
     }
 
-    private void DrawPiece(Graphics g, Piece p, int atRow, int atX, int atY, int size, float alpha)
+    private void DrawPiece(Graphics g, Piece p, int atRow, int atX, int atY, int size)
     {
         for (int row = 0; row < p.Size; row++)
         {

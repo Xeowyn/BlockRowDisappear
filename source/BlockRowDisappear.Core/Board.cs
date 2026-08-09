@@ -69,15 +69,9 @@ public class Board
                     {
                         return false;   // through the floor
                     }
-                    if (r >= 0)
+                    if (r >= 0 && cells[r, c] != 0)
                     {
-                        if (cells[r, c] != 0)
-                        {
-                            return false;   // there is already a block here
-                        }
-                        else
-                        {
-                        }
+                        return false;   // there is already a block here
                     }
                 }
             }

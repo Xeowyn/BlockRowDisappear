@@ -52,7 +52,8 @@ public class Piece
     //
     // spinning right: the top row becomes the right column.
     // spinning left is the same idea the other way.
-    public Piece Spun(bool clockwise)
+    // if you do not say which way, it spins right
+    public Piece Spun(bool clockwise = true)
     {
         int size = Size;
         int[,] temp = new int[size, size];
@@ -76,12 +77,6 @@ public class Piece
         spun.Row = Row;
         spun.Col = Col;
         return spun;
-    }
-
-    // if you do not say which way, it spins right
-    public Piece Spun()
-    {
-        return Spun(true);
     }
 
     // picks one of the 7 pieces at random

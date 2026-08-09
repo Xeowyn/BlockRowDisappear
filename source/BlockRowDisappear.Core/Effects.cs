@@ -16,6 +16,11 @@ public class Effects
     // a white flash over the whole screen, 0 = none, 1 = full white
     public double Flash = 0;
 
+    // how fast the shake and the flash calm down each second
+    private const double ShakeDecayPerSecond = 0.004;
+    private const double ShakeStopThreshold = 0.05;
+    private const double FlashDecayPerSecond = 3.0;
+
     private Random rnd = new Random();
 
     // stop everything, used when the game restarts
@@ -112,13 +117,13 @@ public class Effects
         }
 
         // the shake and the flash calm down over time
-        Shake = Shake * Math.Pow(0.004, seconds);
-        if (Shake < 0.05)
+        Shake = Shake * Math.Pow(ShakeDecayPerSecond, seconds);
+        if (Shake < ShakeStopThreshold)
         {
             Shake = 0;
         }
 
-        Flash = Flash - seconds * 3.0;
+        Flash = Flash - seconds * FlashDecayPerSecond;
         if (Flash < 0)
         {
             Flash = 0;

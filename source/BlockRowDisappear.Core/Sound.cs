@@ -42,7 +42,7 @@ public class Sound
             player.Load();
             players[name] = player;
         }
-        catch (Exception e)
+        catch (Exception)
         {
             // some computers have no sound card
         }
@@ -64,7 +64,7 @@ public class Sound
         {
             players[name].Play();
         }
-        catch (Exception e)
+        catch (Exception)
         {
         }
     }

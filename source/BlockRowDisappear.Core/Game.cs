@@ -41,6 +41,13 @@ public class Game
     // how long each explosion picture stays on screen
     private const double BoomFrameMs = 55;
 
+    // how the fall speed ramps up with level
+    private const double StartingFallDelayMs = 500;
+    private const double FallDelayStepPerLevelMs = 40;
+    private const double MinFallDelayMs = 100;
+
+    private const int LinesPerLevel = 10;
+
     private double fallTimer = 0;
     private double boomTimer = 0;
     private int rowsWaiting = 0;
@@ -99,10 +106,10 @@ public class Game
     {
         get
         {
-            double delay = 500 - (Level - 1) * 40;
-            if (delay < 100)
+            double delay = StartingFallDelayMs - (Level - 1) * FallDelayStepPerLevelMs;
+            if (delay < MinFallDelayMs)
             {
-                delay = 100;
+                delay = MinFallDelayMs;
             }
             return delay;
         }
@@ -353,20 +360,8 @@ public class Game
 
         rowsWaiting = 0;
 
-        if (State != Mode.Banner)
-        {
-            NewPiece();
-        }
-        else
-        {
-            // a level banner just came up, still hand out the next piece
-            NewPiece();
-        }
-    }
-
-    public void AddPoints(int howMany)
-    {
-        AddPoints(howMany, Board.Rows / 2);
+        // even if a level banner just came up, still hand out the next piece
+        NewPiece();
     }
 
     public void AddPoints(int howMany, double popupRow)
@@ -402,7 +397,7 @@ public class Game
         }
 
         Lines = Lines + howMany;
-        Level = (Lines / 10) + 1;
+        Level = (Lines / LinesPerLevel) + 1;
 
         if (Score > Best)
         {

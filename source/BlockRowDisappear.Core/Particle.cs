@@ -5,7 +5,7 @@ using System;
 // Its position is measured in BOARD SQUARES, not pixels, so this class
 // does not need to know how big anything is on screen. The Renderer
 // turns squares into pixels when it draws.
-class Particle
+public class Particle
 {
     public double Col;      // across the board
     public double Row;      // down the board

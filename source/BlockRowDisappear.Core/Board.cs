@@ -1,7 +1,7 @@
 // The playing field. It holds all the blocks that have landed,
 // and it is the thing that knows about walls, the floor,
 // and which rows are full.
-class Board
+public class Board
 {
     public const int Rows = 20;
     public const int Cols = 10;

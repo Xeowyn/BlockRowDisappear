@@ -5,7 +5,7 @@ using System.Collections.Generic;
 // and how much the screen is shaking.
 //
 // It does not draw anything itself. The Renderer asks it what to draw.
-class Effects
+public class Effects
 {
     public List<Particle> Particles = new List<Particle>();
     public List<Popup> Popups = new List<Popup>();

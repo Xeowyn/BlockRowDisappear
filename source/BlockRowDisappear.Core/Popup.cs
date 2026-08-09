@@ -4,7 +4,7 @@ using System;
 // like the "+800" you see when you clear some rows.
 //
 // Like Particle, its position is in board squares, not pixels.
-class Popup
+public class Popup
 {
     public string Text;
     public double Col;

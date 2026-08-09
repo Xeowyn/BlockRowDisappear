@@ -9,4 +9,8 @@
     <RootNamespace>BlockRowDisappear</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlockRowDisappear.Core\BlockRowDisappear.Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -2,7 +2,7 @@ using System;
 
 // One block piece. It knows its own shape, which picture to use,
 // and where it is sitting on the board.
-class Piece
+public class Piece
 {
     // the shape. a 1 means there is a block there.
     // it is private so nothing outside this class can mess it up.

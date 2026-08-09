@@ -6,7 +6,7 @@ using System.Media;
 // Plays the .wav files from the assets folder.
 // Windows only lets one of these play at a time, so a new
 // sound cuts off the one before it. That is fine for this game.
-class Sound
+public class Sound
 {
     public bool On = true;
 

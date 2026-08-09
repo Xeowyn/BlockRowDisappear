@@ -1,7 +1,7 @@
 using System;
 
 // which screen we are on
-enum Mode
+public enum Mode
 {
     Title,      // the front screen when you start the game up
     Banner,     // "GO!" or "GOOD JOB!" is showing, the board is frozen
@@ -13,7 +13,7 @@ enum Mode
 // The rules of the game.
 // This class does not know anything about windows or drawing.
 // It just keeps track of what is happening, so it is easy to test.
-class Game
+public class Game
 {
     public Board Board = new Board();
     public Effects Effects = new Effects();

@@ -61,7 +61,7 @@ That builds the game and opens it in a window.
 ## What's in this folder
 
 - `assets/` — every picture and sound. Swap a file to reskin the game — no code changes needed.
-- `source/` — the C# code
+- `source/` — the C# code, split into three projects (see below)
 - `tools/` — the script that generates some of the assets, plus credits for the art
 - `rebuild.bat` — rebuilds the game into a single .exe file after you change the code
 
@@ -99,19 +99,22 @@ Drop in any `.wav` file you like. Windows only plays one sound at a time, so a n
 
 ## The code
 
-Split into one file per job:
+Three projects in `source/`:
 
-- `Piece.cs` — one falling piece: its shape, and how it spins
-- `Board.cs` — the 10x20 grid: walls, floor, and checking for full rows
-- `Game.cs` — the rules: falling, scoring, levels, which screen is showing
-- `Particle.cs` — one spark
-- `Popup.cs` — one bit of floating score text
-- `Effects.cs` — holds all the sparks, popups, screen shake, and flash
-- `Assets.cs` — loads the pictures
-- `Sound.cs` — plays the `.wav` files
-- `Renderer.cs` — draws everything (never changes the game's rules)
-- `GameForm.cs` — the window, keyboard input, and the game timer
-- `Program.cs` — just opens the window
+- `BlockRowDisappear.Core/` — the game rules, no windows or drawing involved
+  - `Piece.cs` — one falling piece: its shape, and how it spins
+  - `Board.cs` — the 10x20 grid: walls, floor, and checking for full rows
+  - `Game.cs` — the rules: falling, scoring, levels, which screen is showing
+  - `Particle.cs` — one spark
+  - `Popup.cs` — one bit of floating score text
+  - `Effects.cs` — holds all the sparks, popups, screen shake, and flash
+  - `Sound.cs` — plays the `.wav` files
+- `BlockRowDisappear/` — the actual Windows app. References `BlockRowDisappear.Core`.
+  - `Assets.cs` — loads the pictures
+  - `Renderer.cs` — draws everything (never changes the game's rules)
+  - `GameForm.cs` — the window, keyboard input, and the game timer
+  - `Program.cs` — just opens the window
+- `BlockRowDisappear.Tests/` — unit tests for `BlockRowDisappear.Core`
 
 `Game.cs` has no drawing code in it at all, and `Renderer.cs` never changes the game's state — that split is what makes the rules testable without opening a window.
 

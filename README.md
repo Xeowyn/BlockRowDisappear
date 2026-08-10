@@ -6,7 +6,7 @@ Stack the falling blocks. Fill a whole row and it blows up and vanishes. It's a 
 
 This game only runs on Windows.
 
-**[Download BlockRowDisappear-windows.zip](https://github.com/Xeowyn/BlockRowDisappear/releases/latest)** — no cloning, no install, no build step. Extract the zip and double-click `BlockRowDisappear.exe` inside. It's a self-contained build, so it runs even on a PC with no .NET installed at all. (It's not committed directly in this repo because the built exe is ~150MB, over GitHub's size limit for a normal file — that's what the separate Release download is for. Keep the exe and the `assets` folder next to each other after extracting; the game looks for that folder right beside itself.)
+**[Download BlockRowDisappear-windows.zip](https://github.com/Xeowyn/BlockRowDisappear/releases/latest)** — no cloning, no install, no build step. Extract the zip and double-click `BlockRowDisappear.exe` inside. It's a self-contained build, so it runs even on a PC with no .NET installed at all. Keep the exe and the `assets` folder next to each other after extracting — the game looks for that folder right beside itself.
 
 **To build it yourself from the code instead:**
 

@@ -16,7 +16,7 @@ class Assets
     public string Folder;
 
     // how many parent folders to try when looking for the assets folder
-    private const int MaxParentFolderSearchDepth = 5;
+    private const int MaxParentFolderSearchDepth = 8;
 
     // normal way: look for the assets folder next to the .exe
     public Assets() : this(FindFolder())
